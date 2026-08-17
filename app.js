@@ -10,6 +10,9 @@ app.use(express.urlencoded({ extended: false }));
 const basicRoutes = require('./routes/01-basic');
 app.use(basicRoutes);
 
+const statelessRoutes = require('./routes/02-stateless-demo');
+app.use(statelessRoutes);
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
