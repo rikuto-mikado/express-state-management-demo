@@ -13,6 +13,9 @@ app.use(basicRoutes);
 const statelessRoutes = require('./routes/02-stateless-demo');
 app.use(statelessRoutes);
 
+const sessionRoutes = require('./routes/03-session-basics');
+app.use(sessionRoutes);
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
