@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <% if (isLoggedIn) {%>
+        <p style="color: blue;"><%= successMessage %></p>
+        <% if (user) {%>
+            <p>Welcome, <%= user.name || user.email %></p>
+        <% } %>
+        <% if (logoutAction) {%>
+            <from action="<%= logoutAction %>" method="POST">
+                <button type="submit">Logout</button>
+            </from>
+        <% } %>
+    <% } else {%>
+        <p style="color: orange;">Not logged in</p>
+        <from action="<%= loginAction %>" method="POST">
+            <button type="submit">Login</button>
+        </from>
+    <% } %>
+  </body>
+</html>
